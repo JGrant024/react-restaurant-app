@@ -27,7 +27,7 @@ const Menu = () => {
   return (
     <div>
       <MenuList menuItems={menuItems} setOrder={setOrder} order={order} />
-      <Order order={order} />
+      <Order order={order} menuItems={menuItems} />
     </div>
   );
 };

@@ -16,7 +16,7 @@ const MenuList = ({ menuItems, setOrder, order }) => {
             <button
               onClick={() => {
                 setOrder([...order, menuItem]);
-                console.log(menuItem);
+                console.log("menu", menuItem);
               }}
             >
               Add to Cart
