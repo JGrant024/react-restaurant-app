@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <h2>The Brady Brunch</h2>
+      <h2>Marvelous Meals & Brunch </h2>
       <Menu />
     </div>
   );
