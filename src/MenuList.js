@@ -1,28 +1,24 @@
 import React from "react";
 import Order from "./Order";
+import "./App.css";
 
 const MenuList = ({ menuItems, setOrder, order }) => {
   return (
-    <div>
+    <div className="menuOptions">
       {menuItems.map((menuItem) => (
-        <>
-          <div>
-            <img src={menuItem.img} style={{ maxHeight: "200px" }} alt="" />
-          </div>
-
-          <div>{menuItem.food}</div>
-          <div>{menuItem.price}</div>
-          <div>
-            <button
-              onClick={() => {
-                setOrder([...order, menuItem]);
-                console.log("menu", menuItem);
-              }}
-            >
-              Add to Cart
-            </button>
-          </div>
-        </>
+        <div style={{ width: "300px", height: "auto", margin: "5px" }}>
+          <img src={menuItem.img} style={{ maxHeight: "200px" }} alt="" />
+          <p>{menuItem.food}</p>
+          <p>{menuItem.price}</p>
+          <button
+            onClick={() => {
+              setOrder([...order, menuItem]);
+              console.log("menu", menuItem);
+            }}
+          >
+            Add to Cart
+          </button>
+        </div>
       ))}
     </div>
   );
