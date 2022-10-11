@@ -73,8 +73,13 @@ const Menu = () => {
 
   return (
     <div>
-      <MenuList menuItems={menuItems} setOrder={setOrder} order={order} />
-      <Order order={order} menuItems={menuItems} />
+      <MenuList
+        menuItems={menuItems}
+        setOrder={setOrder}
+        setMenuItems={setMenuItems}
+        order={order}
+      />
+      <Order order={order} menuItems={menuItems} setMenuItems={setMenuItems} />
     </div>
   );
 };
