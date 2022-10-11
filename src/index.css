@@ -15,7 +15,12 @@ p{
   color: purple;
 }
 
-
+button{
+  background-color: black;
+  color: white;
+  border-radius: 3px;
+  padding: 10px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

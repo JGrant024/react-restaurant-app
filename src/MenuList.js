@@ -14,6 +14,7 @@ const MenuList = ({ menuItems, setOrder, order }) => {
           <img src={menuItem.img} style={{ maxHeight: "200px" }} alt="" />
           <p>{menuItem.food}</p>
           <p>{menuItem.price}</p>
+          <p>{menuItem.description}</p>
           <Button
             variant="dark"
             onClick={() => {

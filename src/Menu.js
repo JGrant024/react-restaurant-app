@@ -18,7 +18,7 @@ const Menu = () => {
       food: "SHRIMP && GRITS",
       price: 13,
       img: "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Cheesy-Cajun-Shrimp-and-Grits_EXPS_TOHDJ20_199562_B08_06_3b.jpg",
-      description: "",
+      description: "testing ",
     },
 
     {
@@ -57,7 +57,7 @@ const Menu = () => {
       food: "RAGING RASPBERRY",
       price: 8,
       img: "https://www.midgetmomma.com/wp-content/uploads/2021/04/Raspberry-Mimosas-22.jpg",
-      description: "",
+      description: "testx",
     },
 
     {
