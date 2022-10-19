@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("images/brunch\ table.jpg");
+  background-image: url("images/rose.avif");
   background-repeat: no-repeat;
   background-position:inherit;
   background-size: cover; 
@@ -17,7 +17,7 @@ p{
 }
 
 button{
-  background-color: black;
+  background-color: tan;
   color: white;
   border-radius: 3px;
   padding: 10px;

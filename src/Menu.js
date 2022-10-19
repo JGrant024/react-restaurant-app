@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import MenuList from "./MenuList";
 import Order from "./Order";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([
@@ -8,7 +10,7 @@ const Menu = () => {
       category: "food",
       food: "CHICKEN && WAFFLES",
       price: 12,
-      img: "https://images.unsplash.com/photo-1565880112491-e7c4c313850d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      img: "https://t4.ftcdn.net/jpg/01/90/57/59/360_F_190575923_B5GhewYRdKlLpQAQ7CRyxseMZuy2ps4r.jpg",
       description:
         " St. agur blue cheese cheeseburger mozzarella. Stinking bishop halloumi danish fontina cauliflower cheese fondue emmental ricotta cheesy grin. ",
     },
@@ -17,7 +19,7 @@ const Menu = () => {
       category: "food",
       food: "SHRIMP && GRITS",
       price: 13,
-      img: "https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Cheesy-Cajun-Shrimp-and-Grits_EXPS_TOHDJ20_199562_B08_06_3b.jpg",
+      img: "https://garrysgrill.com/wp-content/uploads/2017/07/Shrimp-and-grit.png",
       description:
         "Roquefort cheese slices emmental. Stilton monterey jack melted cheese lancashire dolcelatte smelly cheese bocconcini bocconcini. Taleggio who moved my cheese caerphilly feta brie paneer emmental croque monsieur. Manchego mozzarella cheddar halloumi fromage cheese strings st. agur blue cheese",
     },
@@ -26,7 +28,7 @@ const Menu = () => {
       category: "food",
       food: "WAFFLES && FRUIT",
       price: 11,
-      img: "https://images.unsplash.com/photo-1605209679572-3ddac6d8ae5e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      img: "https://media.istockphoto.com/photos/fresh-homemade-heart-shape-waffles-with-blueberries-and-strawberry-on-picture-id641818546?k=20&m=641818546&s=612x612&w=0&h=wdVO6mXa2zZ9npWkMSBHvkKkHPM3a8wF_g5_ENO5HGo=",
       description:
         "Hard cheese cauliflower cheese cheese strings. Red leicester roquefort taleggio pecorino swiss babybel roquefort camembert de normandie.",
     },
@@ -34,7 +36,7 @@ const Menu = () => {
       category: "food",
       food: "BACON && EGGS",
       price: 11,
-      img: "https://media.istockphoto.com/photos/smiling-and-positive-face-made-from-fried-eggs-and-bacon-on-plate-picture-id919919376?b=1&k=20&m=919919376&s=170667a&w=0&h=c0DVqemFs0aWWX7sRRrled1nwYrrTYvpA0ZMbQ3Bh78=",
+      img: "https://media.istockphoto.com/photos/close-up-of-2-sunny-side-up-style-eggs-and-bacon-on-a-plate-picture-id468341234?k=20&m=468341234&s=612x612&w=0&h=_yYKfOr0KAap-meV36i9f87A8uxsWBAF2M0eocZ40f8=",
       description:
         "Strip steak corned beef boudin, kielbasa cupim tail prosciutto frankfurter ball tip pig tri-tip turducken swine meatloaf.",
     },
@@ -75,6 +77,38 @@ const Menu = () => {
         "Bloody mary glogg the blenheim saketini ectoplasm dom chivas regal. Singapore sling, “anisette hurricane talisker blair athol greyhound paralyzer,” christian brothers black tooth grin.",
     },
   ]);
+
+  function Example() {
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    return (
+      <>
+        <Button variant="primary" onClick={handleShow}>
+          Launch demo modal
+        </Button>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  }
+
+  <Example />;
 
   const [order, setOrder] = useState([]);
 
