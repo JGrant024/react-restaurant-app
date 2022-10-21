@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import MenuList from "./MenuList";
 import Order from "./Order";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 
 const Menu = () => {
   const [menuItems, setMenuItems] = useState([
@@ -78,39 +76,19 @@ const Menu = () => {
     },
   ]);
 
-  function Example() {
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    return (
-      <>
-        <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
-        </Button>
-
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-      </>
-    );
-  }
-
-  <Example />;
-
   const [order, setOrder] = useState([]);
+
+  const submitOrder = () => {
+    const submittedOrders =
+      JSON.parse(localStorage.getItem("marvelousMunchies")) || [];
+    submittedOrders.push({
+      name: "Jonathan Grant",
+      phoneNumber: "555-555-5555",
+      order,
+    });
+    localStorage.setItem("marvelousMunchies", JSON.stringify(submittedOrders));
+    setOrder([]);
+  };
 
   return (
     <div>
@@ -120,7 +98,7 @@ const Menu = () => {
         setMenuItems={setMenuItems}
         order={order}
       />
-      <Order order={order} menuItems={menuItems} setMenuItems={setMenuItems} />
+      <Order order={order} submitOrder={submitOrder} />
     </div>
   );
 };
